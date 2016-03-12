@@ -6,12 +6,14 @@ var _ = require('lodash');
 var ReactChoiceMultilist = React.createClass({
   getInitialState() {
     return {
-      listVariants: this.props.variants,
-      listSelected: this.props.selected
+      listOptions: this.props.options,
+      listFavorites: this.props.favorites,
+      isCheckedOptions: false,
+      isCheckedFavorites: false
     };
   },
 
-  // function for moving [items] from one list to another
+  // function for moving items from one list to another
   onMove(items, from, to) {
     var listFrom = _.uniq(this.state[from]);
     var listTo = _.uniq(this.state[to]);
@@ -23,7 +25,7 @@ var ReactChoiceMultilist = React.createClass({
       
       var oldObj = listFrom[index];
       _.pull(listFrom, oldObj);
-      item.selected = false;
+      item.checked = false;
       listTo.push(item);
     });
 
@@ -36,23 +38,23 @@ var ReactChoiceMultilist = React.createClass({
     this.setState(stateObject);
   },
 
-  // get all selected elements from list
-  getSelected(listName) {
+  // function for getting all checked elements in list
+  getCheckedList(listName) {
     var list = _.uniq(this.state[listName]);
     var result = [];
     _.forEach(list, function(item) {
-      (item.selected === true) && result.push(item);
+      (item.checked === true) && result.push(item);
     });
     return result;
   },
 
-  // select function: check item
-  onSelect(item, listName) {
+  // check event function
+  onCheck(item, listName) {
     var list = _.uniq(this.state[listName]);
     var index = _.findIndex(list, function(items) {
       return (items.keyID === item.keyID);
     });
-    list[index].selected = item.selected;
+    list[index].checked = item.checked;
 
     var stateObject = function() {
       var result = {};
@@ -63,34 +65,34 @@ var ReactChoiceMultilist = React.createClass({
     this.setState(stateObject);
   },
 
-  // select item in listVariants
-  onSelectVariants(item) {
-    this.onSelect(item, 'listVariants');
+  // check event function for options list
+  onCheckOptions(item) {
+    this.onCheck(item, 'listOptions');
   },
 
-  // select item in listSelected
-  onSelectSelected(item) {
-    this.onSelect(item, 'listSelected');
+  // check event function for favorites list
+  onCheckFavorites(item) {
+    this.onCheck(item, 'listFavorites');
   },
 
-  // move(remove) one item from listSelected to listVariants 
+  // function for removing item from favorites 
   onRemove(item) {
-    this.onMove([item], 'listSelected', 'listVariants');
+    this.onMove([item], 'listFavorites', 'listOptions');
   },
 
-  // move(add) one item from listVariants to listSelected
+  // function for adding item to favorites
   onAdd(item) {
-    this.onMove([item], 'listVariants', 'listSelected');
+    this.onMove([item], 'listOptions', 'listFavorites');
   },
 
-  // move items from listVariants to listSelected
-  onMoveToSelected() {
-    this.onMove(this.getSelected('listVariants'), 'listVariants', 'listSelected');
+  // function for moving items from options to favorites
+  onMoveToFavorites() {
+    this.onMove(this.getCheckedList('listOptions'), 'listOptions', 'listFavorites');
   },
 
-  // move items from listSelected to listVariants
-  onMoveToVariants() {
-    this.onMove(this.getSelected('listSelected'), 'listSelected', 'listVariants');
+  // function for moving items from favorites to options
+  onMoveToOptions() {
+    this.onMove(this.getCheckedList('listFavorites'), 'listFavorites', 'listOptions');
   },
 
   render() {
@@ -98,11 +100,11 @@ var ReactChoiceMultilist = React.createClass({
       <div className="container">
         <div className="col-lg-5 col-md-5 col-sm-5">
           <List 
-            items={this.state.listVariants}
-            className={'list-variants'}
+            items={this.state.listOptions}
+            className={'list-options'}
             btnType={'add'}
             onButtonClick={this.onAdd}
-            onSelect={this.onSelectVariants}
+            onCheck={this.onCheckOptions}
           />
         </div>
         <div className="col-lg-2 col-md-2 col-sm-2">
@@ -111,27 +113,29 @@ var ReactChoiceMultilist = React.createClass({
               <ListButton
                 btnClass = {'btn-add btn-primary'}
                 btnIconClass = {'fa-chevron-right'}
+                disabled = {this.state.isCheckedOptions}
                 text = {'Move'}
-                onClick = {this.onMoveToSelected}
+                onClick = {this.onMoveToFavorites}
               />
             </p>
             <p>
               <ListButton
                 btnClass = {'btn-add btn-primary'}
                 btnIconClass = {'fa-chevron-left'}
+                disabled = {this.state.isCheckedFavorites}
                 text = {'Move'}
-                onClick = {this.onMoveToVariants}
+                onClick = {this.onMoveToOptions}
               />
             </p>
           </div>
         </div>
         <div className="col-lg-5 col-md-5 col-sm-5">
           <List
-            items={this.state.listSelected} 
-            className={'list-selected'}
+            items={this.state.listFavorites} 
+            className={'list-favorites'}
             btnType={'remove'}
             onButtonClick={this.onRemove}
-            onSelect={this.onSelectSelected}
+            onCheck={this.onCheckFavorites}
           />
         </div>
       </div>

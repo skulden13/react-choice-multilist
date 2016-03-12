@@ -2,7 +2,10 @@ var React = require('react');
 
 var ListButton = React.createClass({
   render() {
-    var btnClass = 'btn btn-sm ' + this.props.btnClass;
+    var disabledClass = (this.props.disabled) ? ' disabled' : '';
+    var btnClass = 'btn btn-sm ' +
+      this.props.btnClass +
+      disabledClass;
     var iconClass = 'fa ' + this.props.btnIconClass;
 
     return (

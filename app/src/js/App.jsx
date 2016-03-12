@@ -2,24 +2,24 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactChoiceMultilist = require('./components/ReactChoiceMultilist.jsx');
 
-var listVariants = [
-  {keyID: 1, text: 'ReactJS', selected: false}, 
-  {keyID: 2, text: 'Backbone', selected: false}, 
-  {keyID: 3, text: 'AngularJS', selected: false}, 
-  {keyID: 4, text: 'EmberJS', selected: false}, 
-  {keyID: 5, text: 'RequireJS', selected: false}, 
-  {keyID: 6, text: 'ThreeJS', selected: false}
+var listOptions = [
+  {keyID: 1, text: 'ReactJS', checked: false}, 
+  {keyID: 2, text: 'Backbone', checked: false}, 
+  {keyID: 3, text: 'AngularJS', checked: false}, 
+  {keyID: 4, text: 'EmberJS', checked: false}, 
+  {keyID: 5, text: 'RequireJS', checked: false}, 
+  {keyID: 6, text: 'ThreeJS', checked: false}
 ];
-var listSelected = [
-  {keyID: 7, text: 'jQuery', selected: false},
-  {keyID: 8, text: 'LoDash', selected: false},
-  {keyID: 9, text: 'Underscore', selected: false}
+var listFavorites = [
+  {keyID: 7, text: 'jQuery', checked: false},
+  {keyID: 8, text: 'LoDash', checked: false},
+  {keyID: 9, text: 'Underscore', checked: false}
 ];
 
 ReactDOM.render(
   <ReactChoiceMultilist
-    variants={listVariants}
-    selected={listSelected}
+    options={listOptions}
+    favorites={listFavorites}
   />,
   document.getElementById('app')
 );

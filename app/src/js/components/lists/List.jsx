@@ -8,10 +8,10 @@ var List = React.createClass({
         key = {item.keyID}
         keyID = {item.keyID}
         text = {item.text}
-        selected = {item.selected}
+        checked = {item.checked}
         btnType = {this.props.btnType}
         onButtonClick = {this.props.onButtonClick}
-        onSelect = {this.props.onSelect}
+        onCheck = {this.props.onCheck}
       />
     }.bind(this));
     var className = 'list-unstyled ' + this.props.className; 

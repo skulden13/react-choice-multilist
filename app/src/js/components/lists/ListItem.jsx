@@ -5,7 +5,7 @@ var RemoveButton = require('./../buttons/RemoveButton.jsx');
 var ListItem = React.createClass({
   getInitialState() {
     return {
-      selected: this.props.selected
+      checked: this.props.checked
     };
   },
 
@@ -13,20 +13,18 @@ var ListItem = React.createClass({
     this.props.onButtonClick({
       keyID: this.props.keyID,
       text: this.props.text,
-      selected: true
+      checked: true
     });
   },
 
-  onSelect() {
+  onCheck() {
     this.setState(
-      {
-        selected: !this.state.selected
-      },
+      {checked: !this.state.checked},
       function() {
-        this.props.onSelect({
+        this.props.onCheck({
           keyID: this.props.keyID,
           text: this.props.text,
-          selected: this.state.selected
+          checked: this.state.checked
         });
       }
     );
@@ -43,15 +41,15 @@ var ListItem = React.createClass({
 
     var className = 'list-item ';
     var iconClassName = 'fa ';
-    if (this.state.selected) {
-      className += 'selected';
+    if (this.state.checked) {
+      className += 'checked';
       iconClassName += 'fa-check-square-o';
     } else {
       iconClassName += 'fa-square-o';
     }
 
     return (
-      <li className={className} onClick={this.onSelect} >
+      <li className={className} onClick={this.onCheck} >
         <i className={iconClassName}></i>
         {this.props.text}
         {getButton()}

@@ -1,31 +1,33 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap.scss";
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
 
-.list-variants,
-.list-selected {
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
+$border-color: $gray-lighter;
+
+.list-options,
+.list-favorites {
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
   line-height: 30px;
 }
 
 .list-item {
   cursor: pointer;
   padding: 10px;
-  border-bottom: 1px solid #efefef;
-}
+  border-bottom: 1px solid $border-color;
 
-.list-item:first-child {
-  border-top: 1px solid #efefef;
-}
+  &:first-child {
+    border-top: 1px solid $border-color;
+  }
 
-.list-item > .fa {
-  width: 23px;
+  > .fa {
+    width: 23px;
+  }
 }
 
 #app {
   margin: 30px 0;
-}
 
-#app .fa {
-  padding-right: 10px;
+  .fa {
+    padding-right: 10px;
+  }
 }
