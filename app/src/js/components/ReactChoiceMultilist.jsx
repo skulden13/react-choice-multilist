@@ -8,8 +8,8 @@ var ReactChoiceMultilist = React.createClass({
     return {
       listOptions: this.props.options,
       listFavorites: this.props.favorites,
-      isCheckedOptions: false,
-      isCheckedFavorites: false
+      listOptionsIsChecked: false,
+      listFavoritesIsChecked: false
     };
   },
 
@@ -35,7 +35,9 @@ var ReactChoiceMultilist = React.createClass({
       result[to] = listTo;
       return result;
     }();
-    this.setState(stateObject);
+    this.setState(stateObject,
+      function() { this.isChecked(from); }
+    );
   },
 
   // function for getting all checked elements in list
@@ -46,6 +48,17 @@ var ReactChoiceMultilist = React.createClass({
       (item.checked === true) && result.push(item);
     });
     return result;
+  },
+
+  // function for detecting list for checked items
+  isChecked(listName) {
+    var checked = Boolean(this.getCheckedList(listName).length);
+    var stateObject = function() {
+      var result = {};
+      result[listName + 'IsChecked'] = checked;
+      return result;
+    }();
+    this.setState(stateObject);
   },
 
   // check event function
@@ -62,7 +75,7 @@ var ReactChoiceMultilist = React.createClass({
       return result;
     }();
 
-    this.setState(stateObject);
+    this.setState(stateObject, function(){ this.isChecked(listName) });
   },
 
   // check event function for options list
@@ -113,7 +126,7 @@ var ReactChoiceMultilist = React.createClass({
               <ListButton
                 btnClass = {'btn-add btn-primary'}
                 btnIconClass = {'fa-chevron-right'}
-                disabled = {this.state.isCheckedOptions}
+                disabled = {!this.state.listOptionsIsChecked}
                 text = {'Move'}
                 onClick = {this.onMoveToFavorites}
               />
@@ -122,7 +135,7 @@ var ReactChoiceMultilist = React.createClass({
               <ListButton
                 btnClass = {'btn-add btn-primary'}
                 btnIconClass = {'fa-chevron-left'}
-                disabled = {this.state.isCheckedFavorites}
+                disabled = {!this.state.listFavoritesIsChecked}
                 text = {'Move'}
                 onClick = {this.onMoveToOptions}
               />
