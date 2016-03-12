@@ -11,7 +11,7 @@ var ReactChoiceMultilist = React.createClass({
     };
   },
 
-  // function for moving [items] from [from] list to [to] list
+  // function for moving [items] from one list to another
   onMove(items, from, to) {
     var listFrom = _.uniq(this.state[from]);
     var listTo = _.uniq(this.state[to]);
@@ -22,8 +22,8 @@ var ReactChoiceMultilist = React.createClass({
       });
       
       var oldObj = listFrom[index];
-      oldObj.selected = false;
       _.pull(listFrom, oldObj);
+      item.selected = false;
       listTo.push(item);
     });
 
