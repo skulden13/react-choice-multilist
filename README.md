@@ -2,6 +2,8 @@
 
 ReactJS component for item's manipulation stored in two lists. Based on bootstrap and font-awesome. Dependencies: lodash.
 
+You can view [demo here](http://skulden13.github.io/react-choice-multilist/).
+
 ##Before the first run
 
 1. If don't have `gulp` installed, run `npm install -g gulp` in terminal (*)  
