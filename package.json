@@ -2,19 +2,15 @@
   "name": "reactjs-choice-mulltilist",
   "version": "0.0.1",
   "description": "ReactJS component for items manipulation stored in two lists",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Denis Skulimosvkiy",
-  "url" : "https://github.com/skulden13/react-choice-multilist/issues",
-  "email" : "skulden13@gmail.com",
-  "dependencies": {
-    "lodash": "^4.0.0",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:skulden13/react-choice-multilist.git"
   },
   "devDependencies": {
+    "lodash": "^4.0.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.5.0",
     "gulp": "^3.9.0",
@@ -27,5 +23,19 @@
     "gulp-sass": "^2.2.0",
     "reactify": "^1.1.1",
     "run-sequence": "^1.1.5"
-  }
+  },
+  "author": "Denis Skulimosvkiy",
+  "url" : "https://github.com/skulden13/react-choice-multilist/issues",
+  "email" : "skulden13@gmail.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "choice",
+    "multilist",
+    "favorites",
+    "options"
+  ]
 }
