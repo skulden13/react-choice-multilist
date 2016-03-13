@@ -70,6 +70,6 @@ gulp.task('default', function(){
 	runSequence('browserify', 'copy-fonts', 'sass');
 });
 
-gulp.task('serve', function(){
+gulp.task('dev', function(){
 	runSequence('browserify', 'copy-fonts', 'sass', 'connect', 'open', 'watch');
 });
