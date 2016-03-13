@@ -1,5 +1,5 @@
 {
-  "name": "reactjs-choice-mulltilist",
+  "name": "reactjs-choice-multilist",
   "version": "0.0.1",
   "description": "ReactJS component for items manipulation stored in two lists",
   "main": "app.js",
