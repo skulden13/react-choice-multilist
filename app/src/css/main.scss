@@ -1,5 +1,6 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap.scss";
-@import "../../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "../fonts/fontello/css/icon-embedded.css";
+@import "../fonts/fontello/css/icon-codes.css";
 
 $border-color: $gray-lighter;
 
@@ -19,7 +20,7 @@ $border-color: $gray-lighter;
     border-top: 1px solid $border-color;
   }
 
-  > .fa {
+  > .icon {
     width: 23px;
   }
 }
@@ -27,7 +28,7 @@ $border-color: $gray-lighter;
 #app {
   margin: 30px 0;
 
-  .fa {
+  .icon {
     padding-right: 10px;
   }
 }

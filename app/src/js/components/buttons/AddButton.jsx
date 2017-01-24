@@ -6,7 +6,7 @@ var AddButton = React.createClass({
     return (
       <ListButton
         btnClass={'pull-right btn-add btn-success'}
-        btnIconClass={'fa-plus'}
+        btnIconClass={'icon icon-plus'}
         text={'Add'}
         onClick={this.props.onClick}
       />

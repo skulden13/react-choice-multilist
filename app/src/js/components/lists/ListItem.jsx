@@ -32,7 +32,7 @@ var ListItem = React.createClass({
 
   render() {
     var getButton = function() {
-      if (this.props.btnType === 'add') { 
+      if (this.props.btnType === 'add') {
         return <AddButton onClick={this.onButtonClick} />;
       } else if (this.props.btnType === 'remove') {
         return <RemoveButton onClick={this.onButtonClick} />;
@@ -40,12 +40,12 @@ var ListItem = React.createClass({
     }.bind(this);
 
     var className = 'list-item ';
-    var iconClassName = 'fa ';
+    var iconClassName = 'icon ';
     if (this.state.checked) {
       className += 'checked';
-      iconClassName += 'fa-check-square-o';
+      iconClassName += 'icon-check-square-o';
     } else {
-      iconClassName += 'fa-square-o';
+      iconClassName += 'icon-square-o';
     }
 
     return (

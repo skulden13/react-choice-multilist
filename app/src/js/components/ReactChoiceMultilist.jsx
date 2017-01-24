@@ -22,7 +22,7 @@ var ReactChoiceMultilist = React.createClass({
       var index = _.findIndex(listFrom, function(items) {
         return (items.keyID === item.keyID);
       });
-      
+
       var oldObj = listFrom[index];
       _.pull(listFrom, oldObj);
       item.checked = false;
@@ -88,7 +88,7 @@ var ReactChoiceMultilist = React.createClass({
     this.onCheck(item, 'listFavorites');
   },
 
-  // function for removing item from favorites 
+  // function for removing item from favorites
   onRemove(item) {
     this.onMove([item], 'listFavorites', 'listOptions');
   },
@@ -112,7 +112,7 @@ var ReactChoiceMultilist = React.createClass({
     return (
       <div className="container">
         <div className="col-lg-5 col-md-5 col-sm-5">
-          <List 
+          <List
             items={this.state.listOptions}
             className={'list-options'}
             btnType={'add'}
@@ -121,11 +121,11 @@ var ReactChoiceMultilist = React.createClass({
           />
         </div>
         <div className="col-lg-2 col-md-2 col-sm-2">
-          <div className="text-center"> 
+          <div className="text-center">
             <p>
               <ListButton
                 btnClass = {'btn-add btn-primary'}
-                btnIconClass = {'fa-chevron-right'}
+                btnIconClass = {'icon icon-chevron-right'}
                 disabled = {!this.state.listOptionsIsChecked}
                 text = {'Move'}
                 onClick = {this.onMoveToFavorites}
@@ -134,7 +134,7 @@ var ReactChoiceMultilist = React.createClass({
             <p>
               <ListButton
                 btnClass = {'btn-add btn-primary'}
-                btnIconClass = {'fa-chevron-left'}
+                btnIconClass = {'icon icon-chevron-left'}
                 disabled = {!this.state.listFavoritesIsChecked}
                 text = {'Move'}
                 onClick = {this.onMoveToOptions}
@@ -144,7 +144,7 @@ var ReactChoiceMultilist = React.createClass({
         </div>
         <div className="col-lg-5 col-md-5 col-sm-5">
           <List
-            items={this.state.listFavorites} 
+            items={this.state.listFavorites}
             className={'list-favorites'}
             btnType={'remove'}
             onButtonClick={this.onRemove}

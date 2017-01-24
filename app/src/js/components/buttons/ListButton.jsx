@@ -6,7 +6,7 @@ var ListButton = React.createClass({
     var btnClass = 'btn btn-sm ' +
       this.props.btnClass +
       disabledClass;
-    var iconClass = 'fa ' + this.props.btnIconClass;
+    var iconClass = 'icon ' + this.props.btnIconClass;
 
     return (
       <span className={btnClass} onClick={this.props.onClick} >

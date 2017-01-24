@@ -1,7 +1,7 @@
 # react-choice-multilist
 
 This is the ReactJS component for an item's manipulation stored in a two lists.
-It's based on Bootstrap and FontAwesome.
+It's based on Bootstrap.
 Dependencies: lodash.
 
 You can view a [demo here](http://skulden13.github.io/react-choice-multilist/).
@@ -22,5 +22,5 @@ You can view a [demo here](http://skulden13.github.io/react-choice-multilist/).
 
 All gulp tasks runs with `gulp task-name`, e.g. `gulp dev`, from the project root directory.
 
-* `default` -- run `browserify` to build ReactJS files, `copy-fonts` to copy FontAwesome fonts to the `dist` folder, build `sass` files.
+* `default` -- run `browserify` to build ReactJS files, `copy-fonts` to copy Fontello fonts to the `dist` folder, build `sass` files.
 * `dev` -- run `default` tasks, `connect` to a default browser, `open` it and run `watch`-ers.

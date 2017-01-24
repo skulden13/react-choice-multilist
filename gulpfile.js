@@ -9,8 +9,8 @@ var sass = require('gulp-sass');
 var port = process.env.port || 3031;
 
 gulp.task('copy-fonts', function () {
-  return gulp.src('./node_modules/font-awesome/fonts/**.*')
-    .pipe(gulp.dest('./app/dist/fonts/'));
+  return gulp.src('./app/src/fonts/fontello/**/*.*')
+    .pipe(gulp.dest('./app/dist/fonts/fontello/'));
 });
 
 gulp.task('sass', function () {
