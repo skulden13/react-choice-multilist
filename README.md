@@ -6,7 +6,7 @@ Dependencies: lodash.
 You can view a [demo here](http://skulden13.github.io/react-choice-multilist/).
 
 
-##Before the first run
+## Before the first run
 
 1. If you don't have `gulp` installed, run `yarn global add gulp` in terminal (*)  
 2. Go to the project root in a terminal
@@ -19,7 +19,7 @@ You can view a [demo here](http://skulden13.github.io/react-choice-multilist/).
 * [Gulp](http://gulpjs.com/)
 
 
-##Gulp tasks
+## Gulp tasks
 
 All gulp tasks runs with `gulp task-name`, e.g. `gulp dev`, from the project root directory.
 
@@ -27,12 +27,12 @@ All gulp tasks runs with `gulp task-name`, e.g. `gulp dev`, from the project roo
 * `dev` -- run `default` tasks, `connect` to a default browser, `open` it and run `watch`-ers.
 
 
-##TODO List:
+## TODO List:
 
-[x] - to rewrite layout, add SUIT components
-[x] - to remove Bootstrap dependency
-[ ] - to replace Lodash with Underscore (or better pure js)
-[ ] - to reduce file size of Component js, css; to compress of output files
-[ ] - to rename .icon Component to .Icon
-[ ] - to convert CSS styles to SASS for Fontello
-[ ] - to minimize style nesting
+- [x] to rewrite layout, add SUIT components
+- [x] to remove Bootstrap dependency
+- [ ] to replace Lodash with Underscore (or better pure js)
+- [ ] to reduce file size of Component js, css; to compress of output files
+- [ ] to rename .icon Component to .Icon
+- [ ] to convert CSS styles to SASS for Fontello
+- [ ] to minimize style nesting
