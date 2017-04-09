@@ -14,7 +14,7 @@ var List = React.createClass({
         onCheck = {this.props.onCheck}
       />
     }.bind(this));
-    var className = 'list-unstyled ' + this.props.className; 
+    var className = 'RCMList ' + this.props.className; 
 
     return (
       <ul className={className}>

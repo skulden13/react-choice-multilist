@@ -1,0 +1,37 @@
+// All variables related to widget should be placed here
+
+// Colors
+$white: #fff;
+$black: #000;
+$gray: #eee;
+$green: #5cb85c;
+$blue: #337ab7;
+$red: #d9534f;
+
+// Font sizes
+$font-size-base: 14px !default;
+$font-size-s: 12px !default;
+
+// Widget settings
+$rcm-font-size: $font-size-base !default;
+
+// Container
+$rcm-container-side-padding: 1.25rem !default;
+
+// List
+$rcm-list-border-color: $gray !default;
+
+// icon
+$rcm-icon-color: $black !default;
+
+// Button
+$rcm-btn-color: $white !default;
+$rcm-btn-bg-color: $blue !default;
+$rcm-btn-add-bg-color: $green !default;
+$rcm-btn-remove-bg-color: $red !default;
+
+// Screen sizes
+$rcm-screen-laptop-s: 1200px !default;
+$rcm-screen-tablet-l: 1024px !default;
+$rcm-screen-tablet-s: 768px !default;
+$rcm-screen-mobile-l: 480px !default;

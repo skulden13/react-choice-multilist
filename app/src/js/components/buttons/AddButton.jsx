@@ -5,8 +5,8 @@ var AddButton = React.createClass({
   render() {
     return (
       <ListButton
-        btnClass={'pull-right btn-add btn-success'}
-        btnIconClass={'icon icon-plus'}
+        btnClass={'RCMButton--add u-floatRight'}
+        btnIconClass={'RCMIcon icon RCMIcon icon-plus'}
         text={'Add'}
         onClick={this.props.onClick}
       />

@@ -110,46 +110,46 @@ var ReactChoiceMultilist = React.createClass({
 
   render() {
     return (
-      <div className="container">
-        <div className="col-lg-5 col-md-5 col-sm-5">
-          <List
-            items={this.state.listOptions}
-            className={'list-options'}
-            btnType={'add'}
-            onButtonClick={this.onAdd}
-            onCheck={this.onCheckOptions}
-          />
-        </div>
-        <div className="col-lg-2 col-md-2 col-sm-2">
-          <div className="text-center">
-            <p>
-              <ListButton
-                btnClass = {'btn-add btn-primary'}
-                btnIconClass = {'icon icon-chevron-right'}
-                disabled = {!this.state.listOptionsIsChecked}
-                text = {'Move'}
-                onClick = {this.onMoveToFavorites}
-              />
-            </p>
-            <p>
-              <ListButton
-                btnClass = {'btn-add btn-primary'}
-                btnIconClass = {'icon icon-chevron-left'}
-                disabled = {!this.state.listFavoritesIsChecked}
-                text = {'Move'}
-                onClick = {this.onMoveToOptions}
-              />
-            </p>
+      <div className="RCMWidget">
+        <div className="RCMGrid">
+          <div className="RCMGrid-item RCMGrid-item--40">
+            <List
+              items={this.state.listOptions}
+              className={'RCMList--options'}
+              btnType={'add'}
+              onButtonClick={this.onAdd}
+              onCheck={this.onCheckOptions}
+            />
           </div>
-        </div>
-        <div className="col-lg-5 col-md-5 col-sm-5">
-          <List
-            items={this.state.listFavorites}
-            className={'list-favorites'}
-            btnType={'remove'}
-            onButtonClick={this.onRemove}
-            onCheck={this.onCheckFavorites}
-          />
+          <div className="RCMGrid-item RCMGrid-item--20">
+            <div className="u-textCenter">
+              <p>
+                <ListButton
+                  btnIconClass = {'RCMIcon icon RCMIcon icon-chevron-right'}
+                  disabled = {!this.state.listOptionsIsChecked}
+                  text = {'Move'}
+                  onClick = {this.onMoveToFavorites}
+                />
+              </p>
+              <p>
+                <ListButton
+                  btnIconClass = {'RCMIcon icon RCMIcon icon-chevron-left'}
+                  disabled = {!this.state.listFavoritesIsChecked}
+                  text = {'Move'}
+                  onClick = {this.onMoveToOptions}
+                />
+              </p>
+            </div>
+          </div>
+          <div className="RCMGrid-item RCMGrid-item--40">
+            <List
+              items={this.state.listFavorites}
+              className={'RCMList--favorites'}
+              btnType={'remove'}
+              onButtonClick={this.onRemove}
+              onCheck={this.onCheckFavorites}
+            />
+          </div>
         </div>
       </div>
     );

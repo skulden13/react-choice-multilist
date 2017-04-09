@@ -1,0 +1,21 @@
+// Custom Container
+
+.RCMContainer {
+  width: $rcm-screen-laptop-s;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-right: $rcm-container-side-padding;
+  padding-left: $rcm-container-side-padding;
+
+  @media (max-width: $rcm-screen-laptop-s - 1) {
+    width: $rcm-screen-tablet-l;
+  }
+
+  @media (max-width: $rcm-screen-tablet-l - 1) {
+    width: $rcm-screen-tablet-s;
+  }
+
+  @media (max-width: $rcm-screen-tablet-s - 1) {
+    width: 100%;
+  }
+}

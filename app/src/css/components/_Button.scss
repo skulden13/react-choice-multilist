@@ -1,0 +1,58 @@
+// Styles for RCM widget Button
+
+@mixin _btn-colorize($bg-color) {
+  border: 1px solid darken($bg-color, 5%);
+  background: $bg-color;
+
+  // Don't change colors for disabled state
+  &.is-disabled,
+  &[disabled] {
+    &:hover,
+    &:focus {
+      border: 1px solid darken($bg-color, 5%);
+      background: $bg-color;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-color: darken($bg-color, 10%);
+    background: darken($bg-color, 15%);
+  }
+}
+
+
+.RCMButton {
+  @include _btn-colorize($rcm-btn-bg-color);
+  display: inline-block;
+
+  padding: 0.375em 0.75em; // 6px 12px
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  color: $rcm-btn-color;
+  border-radius: 3px;
+
+  font-size: $font-size-s; // 12px
+  line-height: 1.5;
+
+  touch-action: manipulation;
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.RCMButton--add {
+  @include _btn-colorize($rcm-btn-add-bg-color);
+}
+
+.RCMButton--remove {
+  @include _btn-colorize($rcm-btn-remove-bg-color);
+}

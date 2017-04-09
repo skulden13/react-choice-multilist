@@ -62,7 +62,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/dist/css/*.css', ['css']);
 	gulp.watch('app/dist/js/*.js', ['js']);
 	gulp.watch('app/index.html', ['html']);
-	gulp.watch('app/src/css/*.scss', ['sass']);
+	gulp.watch('app/src/css/**/*.scss', ['sass']);
 	gulp.watch('app/src/js/**/*.jsx', ['browserify']);
 });
 

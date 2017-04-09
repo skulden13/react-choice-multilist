@@ -2,11 +2,11 @@ var React = require('react');
 
 var ListButton = React.createClass({
   render() {
-    var disabledClass = (this.props.disabled) ? ' disabled' : '';
-    var btnClass = 'btn btn-sm ' +
+    var disabledClass = (this.props.disabled) ? ' is-disabled' : '';
+    var btnClass = 'RCMButton ' +
       this.props.btnClass +
       disabledClass;
-    var iconClass = 'icon ' + this.props.btnIconClass;
+    var iconClass = 'RCMIcon icon ' + this.props.btnIconClass;
 
     return (
       <span className={btnClass} onClick={this.props.onClick} >

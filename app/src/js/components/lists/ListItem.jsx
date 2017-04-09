@@ -39,13 +39,13 @@ var ListItem = React.createClass({
       }
     }.bind(this);
 
-    var className = 'list-item ';
-    var iconClassName = 'icon ';
+    var className = 'RCMList-item';
+    var iconClassName = 'RCMList-RCMIcon icon RCMIcon icon ';
     if (this.state.checked) {
-      className += 'checked';
-      iconClassName += 'icon-check-square-o';
+      className += ' checked';
+      iconClassName += 'RCMIcon icon-check-square-o';
     } else {
-      iconClassName += 'icon-square-o';
+      iconClassName += 'RCMIcon icon-square-o';
     }
 
     return (

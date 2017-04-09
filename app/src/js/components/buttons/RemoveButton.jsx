@@ -5,8 +5,8 @@ var RemoveButton = React.createClass({
   render() {
     return (
       <ListButton
-        btnClass={'pull-right btn-remove btn-danger'}
-        btnIconClass={'icon icon-close'}
+        btnClass={'RCMButton--remove u-floatRight'}
+        btnIconClass={'RCMIcon icon RCMIcon icon-close'}
         text='Remove'
         onClick={this.props.onClick}
       />

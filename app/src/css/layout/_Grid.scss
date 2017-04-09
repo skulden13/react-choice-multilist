@@ -1,0 +1,34 @@
+// Cutom simple Grid
+
+.RCMGrid {
+  @include clearfix;
+  margin: 0 0 -1.25rem -1.25rem;
+}
+
+.RCMGrid-item {
+  display: inline-block;
+  float: left;
+
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+// Count of Grid columns
+$_grid-col-count: 10;
+// Step in percentages between Grid columns
+$_grid-step: 100 / $_grid-col-count;
+
+// Cycling generate Grid columns
+@for $i from 1 to $_grid-col-count {
+  $value: $i * $_grid-step;
+
+  .RCMGrid-item--#{$value} {
+    width: $value + %;
+
+    @media (max-width: $rcm-screen-tablet-s) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+}

@@ -111,45 +111,45 @@ var ReactChoiceMultilist = React.createClass({displayName: "ReactChoiceMultilist
 
   render() {
     return (
-      React.createElement("div", {className: "container"}, 
-        React.createElement("div", {className: "col-lg-5 col-md-5 col-sm-5"}, 
-          React.createElement(List, {
-            items: this.state.listOptions, 
-            className: 'list-options', 
-            btnType: 'add', 
-            onButtonClick: this.onAdd, 
-            onCheck: this.onCheckOptions}
-          )
-        ), 
-        React.createElement("div", {className: "col-lg-2 col-md-2 col-sm-2"}, 
-          React.createElement("div", {className: "text-center"}, 
-            React.createElement("p", null, 
-              React.createElement(ListButton, {
-                btnClass: 'btn-add btn-primary', 
-                btnIconClass: 'icon icon-chevron-right', 
-                disabled: !this.state.listOptionsIsChecked, 
-                text: 'Move', 
-                onClick: this.onMoveToFavorites}
-              )
-            ), 
-            React.createElement("p", null, 
-              React.createElement(ListButton, {
-                btnClass: 'btn-add btn-primary', 
-                btnIconClass: 'icon icon-chevron-left', 
-                disabled: !this.state.listFavoritesIsChecked, 
-                text: 'Move', 
-                onClick: this.onMoveToOptions}
+      React.createElement("div", {className: "RCMWidget"}, 
+        React.createElement("div", {className: "RCMGrid"}, 
+          React.createElement("div", {className: "RCMGrid-item RCMGrid-item--40"}, 
+            React.createElement(List, {
+              items: this.state.listOptions, 
+              className: 'RCMList--options', 
+              btnType: 'add', 
+              onButtonClick: this.onAdd, 
+              onCheck: this.onCheckOptions}
+            )
+          ), 
+          React.createElement("div", {className: "RCMGrid-item RCMGrid-item--20"}, 
+            React.createElement("div", {className: "u-textCenter"}, 
+              React.createElement("p", null, 
+                React.createElement(ListButton, {
+                  btnIconClass: 'RCMIcon icon RCMIcon icon-chevron-right', 
+                  disabled: !this.state.listOptionsIsChecked, 
+                  text: 'Move', 
+                  onClick: this.onMoveToFavorites}
+                )
+              ), 
+              React.createElement("p", null, 
+                React.createElement(ListButton, {
+                  btnIconClass: 'RCMIcon icon RCMIcon icon-chevron-left', 
+                  disabled: !this.state.listFavoritesIsChecked, 
+                  text: 'Move', 
+                  onClick: this.onMoveToOptions}
+                )
               )
             )
-          )
-        ), 
-        React.createElement("div", {className: "col-lg-5 col-md-5 col-sm-5"}, 
-          React.createElement(List, {
-            items: this.state.listFavorites, 
-            className: 'list-favorites', 
-            btnType: 'remove', 
-            onButtonClick: this.onRemove, 
-            onCheck: this.onCheckFavorites}
+          ), 
+          React.createElement("div", {className: "RCMGrid-item RCMGrid-item--40"}, 
+            React.createElement(List, {
+              items: this.state.listFavorites, 
+              className: 'RCMList--favorites', 
+              btnType: 'remove', 
+              onButtonClick: this.onRemove, 
+              onCheck: this.onCheckFavorites}
+            )
           )
         )
       )
@@ -168,8 +168,8 @@ var AddButton = React.createClass({displayName: "AddButton",
   render() {
     return (
       React.createElement(ListButton, {
-        btnClass: 'pull-right btn-add btn-success', 
-        btnIconClass: 'icon icon-plus', 
+        btnClass: 'RCMButton--add u-floatRight', 
+        btnIconClass: 'RCMIcon icon RCMIcon icon-plus', 
         text: 'Add', 
         onClick: this.props.onClick}
       )
@@ -185,11 +185,11 @@ var React = require('react');
 
 var ListButton = React.createClass({displayName: "ListButton",
   render() {
-    var disabledClass = (this.props.disabled) ? ' disabled' : '';
-    var btnClass = 'btn btn-sm ' +
+    var disabledClass = (this.props.disabled) ? ' is-disabled' : '';
+    var btnClass = 'RCMButton ' +
       this.props.btnClass +
       disabledClass;
-    var iconClass = 'icon ' + this.props.btnIconClass;
+    var iconClass = 'RCMIcon icon ' + this.props.btnIconClass;
 
     return (
       React.createElement("span", {className: btnClass, onClick: this.props.onClick}, 
@@ -211,8 +211,8 @@ var RemoveButton = React.createClass({displayName: "RemoveButton",
   render() {
     return (
       React.createElement(ListButton, {
-        btnClass: 'pull-right btn-remove btn-danger', 
-        btnIconClass: 'icon icon-close', 
+        btnClass: 'RCMButton--remove u-floatRight', 
+        btnIconClass: 'RCMIcon icon RCMIcon icon-close', 
         text: "Remove", 
         onClick: this.props.onClick}
       )
@@ -240,7 +240,7 @@ var List = React.createClass({displayName: "List",
         onCheck: this.props.onCheck}
       )
     }.bind(this));
-    var className = 'list-unstyled ' + this.props.className; 
+    var className = 'RCMList ' + this.props.className; 
 
     return (
       React.createElement("ul", {className: className}, 
@@ -294,13 +294,13 @@ var ListItem = React.createClass({displayName: "ListItem",
       }
     }.bind(this);
 
-    var className = 'list-item ';
-    var iconClassName = 'icon ';
+    var className = 'RCMList-item';
+    var iconClassName = 'RCMList-RCMIcon icon RCMIcon icon ';
     if (this.state.checked) {
-      className += 'checked';
-      iconClassName += 'icon-check-square-o';
+      className += ' checked';
+      iconClassName += 'RCMIcon icon-check-square-o';
     } else {
-      iconClassName += 'icon-square-o';
+      iconClassName += 'RCMIcon icon-square-o';
     }
 
     return (
