@@ -54,7 +54,6 @@
   padding: 0;
   list-style: none;
   user-select: none;
-  border: 1px solid #eee;
   border-radius: 3px;
   line-height: 30px; }
 
@@ -62,9 +61,10 @@
   display: block;
   padding: 10px;
   cursor: pointer;
-  border-top: 1px solid #eee; }
+  border: 1px solid #eee;
+  border-top: none; }
   .RCMList-item:first-child {
-    border-top: none; }
+    border-top: 1px solid #eee; }
 
 .RCMList-icon {
   width: 23px; }
