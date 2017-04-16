@@ -1,7 +1,7 @@
 var React = require('react');
 var List = require('./lists/List.jsx');
 var ListButton = require('./buttons/ListButton.jsx');
-var _ = require('lodash');
+var _ = require('underscore');
 
 var ReactChoiceMultilist = React.createClass({
   getInitialState() {
@@ -18,13 +18,13 @@ var ReactChoiceMultilist = React.createClass({
     var listFrom = _.uniq(this.state[from]);
     var listTo = _.uniq(this.state[to]);
 
-    _.forEach(items, function(item) {
+    _.map(items, function(item) {
       var index = _.findIndex(listFrom, function(items) {
         return (items.keyID === item.keyID);
       });
 
       var oldObj = listFrom[index];
-      _.pull(listFrom, oldObj);
+      listFrom = _.without(listFrom, oldObj);
       item.checked = false;
       listTo.push(item);
     });
@@ -44,7 +44,7 @@ var ReactChoiceMultilist = React.createClass({
   getCheckedList(listName) {
     var list = _.uniq(this.state[listName]);
     var result = [];
-    _.forEach(list, function(item) {
+    _.map(list, function(item) {
       (item.checked === true) && result.push(item);
     });
     return result;

@@ -8,9 +8,6 @@
     "url": "git@github.com:skulden13/react-choice-multilist.git"
   },
   "devDependencies": {
-    "lodash": "^4.0.0",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
@@ -19,12 +16,15 @@
     "gulp-react": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "reactify": "^1.1.1",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "underscore": "^1.8.3"
   },
   "author": "Denis Skulimosvkiy",
-  "url" : "https://github.com/skulden13/react-choice-multilist/issues",
-  "email" : "skulden13@gmail.com",
+  "url": "https://github.com/skulden13/react-choice-multilist/issues",
+  "email": "skulden13@gmail.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

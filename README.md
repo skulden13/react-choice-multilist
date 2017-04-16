@@ -1,7 +1,7 @@
 # react-choice-multilist
 
 This is the ReactJS component for an item's manipulation stored in a two lists.
-Dependencies: lodash.
+Dependencies: underscore.
 
 You can view a [demo here](http://skulden13.github.io/react-choice-multilist/).
 
@@ -31,7 +31,7 @@ All gulp tasks runs with `gulp task-name`, e.g. `gulp dev`, from the project roo
 
 - [x] to rewrite layout, add SUIT components
 - [x] to remove Bootstrap dependency
-- [ ] to replace Lodash with Underscore (or better pure js)
+- [x] to replace Lodash with Underscore (or better pure js)
 - [ ] to reduce file size of Component js, css; to compress of output files
 - [ ] to rename .icon Component to .Icon
 - [ ] to convert CSS styles to SASS for Fontello
